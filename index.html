@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTIS Airlines</title>
+    <link rel="stylesheet" href="css/mainPageStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      div.contentContainer div.searchContainer {
+        background-color: #87ceeb;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-content: space-between;
+        flex-direction: column;
+        padding: 10px;
+      }
+      div.contentContainer div.searchContainer .search {
+        margin: auto;
+      }
+      div.contentContainer div.searchContainer .search * {
+        border-radius: 15px;
+        padding: 10px;
+        border: black solid 1px;
+        width: 200px;
+        text-align: center;
+        font-size: 12pt;
+        cursor: pointer;
+      }
+
+      div.contentContainer div.searchContainer div.titleSearch {
+        margin: auto;
+        display: flex;
+      }
+      div.contentContainer div.searchContainer div.titleSearch div {
+        margin: 2px 20px;
+        position: relative;
+      }
+      div.contentContainer div.searchContainer div.titleSearch div h3 {
+        color: white;
+      }
+      div.contentContainer div.banner {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        height: 22.5rem;
+        margin: 10px 7rem;
+        padding: 10px;
+        align-items: start;
+        background-image: url(../images/banner_photo.webp);
+        background-size: cover;
+        border-radius: 15px;
+        justify-content: center;
+        background-position: 50%;
+      }
+      div.contentContainer div.banner * {
+        color: #fff;
+        margin: 1rem;
+        padding: 10px;
+        width: 20%;
+      }
+      div.contentContainer div.pageLinks div * {
+        color: #fff;
+        margin: 0.2rem;
+        padding: 10px;
+        width: 20%;
+        text-align: center;
+      }
+      div.contentContainer div.pageLinks div.gameLink {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        height: 15rem;
+        margin: 10px 7rem;
+        padding: 10px;
+        align-items: end;
+        background-image: url(../images/game_banner_photo.png);
+        background-size: cover;
+        border-radius: 15px;
+        justify-content: center;
+        background-position: 100%;
+      }
+      div.contentContainer div.pageLinks div.purchasedTicketsLink {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        height: 15rem;
+        margin: 10px 7rem;
+        padding: 10px;
+        align-items: start;
+        background-image: url(../images/tickets_banner_photo.jpg);
+        background-size: cover;
+        border-radius: 15px;
+        justify-content: center;
+        background-position: 50%;
+      }
+      div.contentContainer div.pageLinks div.couponsLink {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        height: 15rem;
+        margin: 10px 7rem;
+        padding: 10px;
+        align-items: end;
+        background-image: url(../images/coupons_banner_photo.png);
+        background-size: cover;
+        border-radius: 15px;
+        justify-content: center;
+        background-position: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <header class="stable">
+        <!--To avoid overlapping with content part-->
+        <div class="logo">
+          <img
+            style="height: 50px; width: 150px"
+            src="images/CTIS_airlines_Logo_blue.png"
+          />
+        </div>
+      </header>
+
+      <div class="contentContainer">
+        <div class="searchContainer">
+          <div class="titleSearch">
+            <div style="left: -305px"><h3>From:</h3></div>
+            <div style="left: -190px"><h3>To:</h3></div>
+            <div style="left: -50px"><h3>When:</h3></div>
+          </div>
+          <div class="search">
+            <select name="from" id="from">
+              <option value="Ankara">Ankara</option>
+              <option value="Istanbul">İstanbul</option>
+              <option value="Adana">Adana</option>
+              <option value="Antalya">Antalya</option>
+              <option value="Izmir">İzmir</option>
+            </select>
+            <select name="to" id="to">
+              <option value="Ankara">Ankara</option>
+              <option value="Istanbul">İstanbul</option>
+              <option value="Adana">Adana</option>
+              <option value="Antalya">Antalya</option>
+              <option value="Izmir">İzmir</option>
+            </select>
+            <input type="date" id="goTime" />
+            <button>Search</button>
+          </div>
+        </div>
+
+        <div class="banner">
+          <span style="font-size: 15pt"> Can't decide where to go? </span>
+          <h2 style="font-size: 35pt">Explore all destinations</h2>
+          <button
+            style="
+              color: black;
+              border-radius: 15px;
+              font-size: 12pt;
+              border: none;
+            "
+          >
+            Search for flights all over the world
+          </button>
+        </div>
+
+        <div class="pageLinks">
+          <div class="gameLink">
+            <span style="font-size: 14pt">
+              Are you bored to planning a trip?
+            </span>
+            <h2 style="font-size: 35pt">Let's give a short break</h2>
+            <div
+              style="
+                color: black;
+                border-radius: 15px;
+                background-color: white;
+                font-size: 12pt;
+                border: 1px black solid;
+                cursor: pointer;
+              "
+            >
+              <a href="game.html" style="color: black"
+                >Try our game!</a
+              >
+            </div>
+          </div>
+
+          <div class="purchasedTicketsLink">
+            <span style="font-size: 15pt"> Did you finished planning? </span>
+            <h2 style="font-size: 33pt">You can view your tickets</h2>
+            <div
+              style="
+                color: black;
+                border-radius: 15px;
+                background-color: white;
+                font-size: 12pt;
+                border: 1px black solid;
+                cursor: pointer;
+              "
+            >
+              <a href="tickets.html" style="color: black">Check your tickets</a>
+            </div>
+          </div>
+
+          <div class="couponsLink">
+            <h2 style="font-size: 35pt">Are you looking for discounts?</h2>
+            <div
+              style="
+                color: black;
+                border-radius: 15px;
+                background-color: white;
+                font-size: 12pt;
+                border: 1px black solid;
+                cursor: pointer;
+              "
+            >
+              <a href="coupons.html" style="color: black"
+                >View all of your coupons</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="leftFooter">
+          <span>Made by Mert Duman</span>
+          <span>All rights are reserved since 2025</span>
+        </div>
+        <div class="rightFooter">
+          <div><a href="#">About us</a></div>
+          <div><a href="campaigns.html">Campaigns</a></div>
+          <div><a href="#">Privacy Policy</a></div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.querySelector("button").addEventListener("click", function () {
+        const from = document.getElementById("from").value;
+        const to = document.getElementById("to").value;
+        const date = document.getElementById("goTime").value;
+        localStorage.setItem("tripDetails", JSON.stringify({ from, to, date }));
+        window.location.href = "/choose-seat/";
+
+        $(".gameLink").click();
+      });
+    </script>
+  </body>
+</html>
