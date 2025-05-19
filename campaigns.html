@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaigns</title>
+    <link rel="stylesheet" href="css/mainPageStyle.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      div.contentContainer .campaigns {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        height: 22.5rem;
+        margin: 10px 7rem;
+        padding: 10px;
+        align-items: start;
+        background-size: cover;
+        border-radius: 15px;
+        justify-content: center;
+      }
+      div.contentContainer .campaigns .background:hover {
+        width: 100%;
+      }
+      div.contentContainer .campaigns .background * {
+        color: #fff;
+        margin: 1rem;
+        padding: 10px;
+        text-align: center;
+        text-wrap: pretty;
+      }
+      div.contentContainer .campaigns .background {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 30%;
+        height: 100%;
+        border-radius: 15px;
+        transition: all 0.2s ease;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <header class="stable">
+        <div id="home" class="logo">
+          <img
+            
+            style="height: 50px; width: 150px"
+            src="images/CTIS_airlines_Logo_blue.png"
+          />
+        </div>
+        <div class="links">
+          <div><a href="">Link 1</a></div>
+          <div><a href="">Link 2</a></div>
+          <div><a href="">Link 3</a></div>
+          <div><a href="">Link 4</a></div>
+        </div>
+      </header>
+
+      <div class="contentContainer">
+        <div class="campaigns" style="background-image: url(images/ankara.jpg)">
+          <div class="background">
+            <h2 style="font-size: 35pt">You should set a trip to Ankara!</h2>
+            <span style="font-size: 20pt">
+              All flights to Ankara are 10% discounted right now!
+            </span>
+          </div>
+        </div>
+        <div class="campaigns" style="background-image: url(images/adana.jpeg)">
+          <div class="background">
+            <h2 style="font-size: 35pt">
+              If you are living in Adana,<br />You should plan a trip!
+            </h2>
+            <span style="font-size: 20pt">
+              All flights from Adana are 15% discounted right now!
+            </span>
+          </div>
+        </div>
+        <div
+          class="campaigns"
+          style="background-image: url(images/kalabalık.jpg)"
+        >
+          <div class="background">
+            <h2 style="font-size: 35pt">
+              We think your family would love a trip!
+            </h2>
+            <span style="font-size: 20pt">
+              If you purchase 3 seats at one time, %20 discount will be applied
+              to total!
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="leftFooter">
+          <span
+            >Made by Mert Duman, Buhari Horoz, Arda Faruk Yurtbilir, Umut Ali
+            Yalcin</span
+          >
+          <span>All rights are reserved since 2025</span>
+        </div>
+        <div class="rightFooter">
+          <div><a href="#">About us</a></div>
+          <div><a href="mainPage.html">Main Page</a></div>
+          <div><a href="#">Privacy Policy</a></div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      $("#home").click(function () {
+        window.location.href = "/mainPage.html";
+      });
+    </script>
+  </body>
+</html>

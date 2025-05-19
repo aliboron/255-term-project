@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>CTIS Airlines Game</title>
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="css/gamePage.css" />
+    <link rel="stylesheet" href="css/mainPageStyle.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/game.js"></script>
+  </head>
+  <body class="grey lighten-4">
+    <div class="mainContainer">
+      <header class="stable">
+        <div id="home" class="logo">
+          <img
+            style="height: 50px; width: 150px"
+            src="images/CTIS_airlines_Logo_blue.png"
+          />
+        </div>
+      </header>
+
+      <div class="center-align" style="margin: 40px 0 20px 0">
+        <button
+          class="btn-large waves-effect waves-light teal darken-2"
+          id="startBtn"
+          style="font-size: 2rem; padding: 0 3rem"
+        >
+          START
+        </button>
+      </div>
+
+      <div class="container">
+        <div class="card z-depth-3" style="margin-top: 40px">
+          <div class="card-content">
+            <div class="center-align" id="gameTitle" style="z-index: 3">
+              <h1 class="red-text text-darken-1" style="margin-bottom: 0">
+                CTIS Airport (CTA)
+              </h1>
+              <h4 class="red-text text-darken-1" style="margin-top: 0">
+                XRAY SCAN
+              </h4>
+            </div>
+            <div class="center-align" style="position: relative">
+              <img
+                class="background responsive-img"
+                src="images/gameAssets/background.png"
+                alt=""
+              />
+              <img
+                id="scanner"
+                class="scanner"
+                src="images/gameAssets/scanner.png"
+                style="z-index: 2"
+                alt=""
+              />
+              <h5
+                id="remaining"
+                class="teal-text text-darken-1"
+                style="
+                  margin-bottom: 0;
+                  position: absolute;
+                  bottom: 150px;
+                  left: 260px;
+                  z-index: 3;
+                "
+              >
+                Remaining luggages : 0
+              </h5>
+              <h5
+                id="score"
+                class="teal-text text-darken-1"
+                style="
+                  margin-bottom: 0;
+                  position: absolute;
+                  bottom: 120px;
+                  left: 260px;
+                  z-index: 3;
+                "
+              >
+                Score : 0
+              </h5>
+              <div
+                id="luggageArea"
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                "
+              >
+                <img
+                  id="luggage"
+                  src=""
+                  alt="Luggage"
+                  style="
+                    position: absolute;
+                    left: 0;
+                    top: 260px;
+                    width: 120px;
+                    display: none;
+                    z-index: 1;
+                  "
+                />
+              </div>
+            </div>
+            <div class="center-align" id="controls" style="margin-top: 30px">
+              <button class="btn red darken-1 btn-large" id="disposeBtn">Dispose</button>
+              <button class="btn darken-1 btn-large" id="passBtn">Pass</button>
+            </div>
+            <div
+              id="feedback"
+              class="center-align"
+              style="
+                margin-top: 20px;
+                font-weight: bold;
+                min-height: 24px;
+                font-size: x-large;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rules card-panel teal lighten-4" style="margin-bottom: 24px">
+        <h5 class="teal-text text-darken-3"><strong>Game Rules</strong></h5>
+        <ul class="browser-default" style="margin-left: 1.5rem">
+          <li>Luggages will move through the scanner one by one.</li>
+          <li>Some luggages contain illegal items, some do not.</li>
+          <li>
+            When a luggage appears, decide if it should be
+            <strong>Disposed</strong> or <strong>Passed</strong>:
+          </li>
+          <ul>
+            <li>
+              Click <span class="red-text"><strong>Dispose</strong></span> if
+              you think the luggage contains illegal items.
+            </li>
+            <li>
+              Click <span class="blue-grey-text"><strong>Pass</strong></span> if
+              you think the luggage is clean.
+            </li>
+          </ul>
+          <li>
+            You get <strong>30 points</strong> for a correct answer,
+            <strong>-10 points</strong> for a wrong answer or if you miss an
+            illegal luggage.
+          </li>
+          <li>
+            If you score at least <strong>30 points</strong> by the end, you win
+            a coupon!
+          </li>
+          <li>The game ends after a random number of rounds.</li>
+          <li>To restart the game you can reload the window.</li>
+        </ul>
+      </div>
+
+      <footer>
+        <div class="leftFooter">
+          <span
+            >Made by Mert Duman, Buhari Horoz, Arda Faruk Yurtbilir, Umut Ali
+            Yalcin</span
+          >
+          <span>All rights are reserved since 2025</span>
+        </div>
+        <div class="rightFooter">
+          <div><a href="#">About us</a></div>
+          <div><a href="campaigns.html">Campaigns</a></div>
+          <div><a href="#">Privacy Policy</a></div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      $("#home").click(function () {
+        window.location.href = "mainPage.html";
+      });
+    </script>
+  </body>
+</html>

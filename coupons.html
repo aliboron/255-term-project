@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kuponlar</title>
+    <link rel="stylesheet" href="css/mainPageStyle.css" />
+    <style>
+      .banner {
+        width: 100%;
+        height: 200px;
+        display: block;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .container h2 {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .kupon-text {
+        font-size: 24px;
+        color: #2e7d32;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 50px;
+        background-color: #b3e5fc;
+      }
+
+      .topbar img {
+        height: 60px;
+      }
+
+      .topbar .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .topbar .nav-links a {
+        padding: 10px 20px;
+        background-color: white;
+        border: 2px solid #000;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      .kupon-card {
+        background-color: #e8f5e9;
+        border: 2px solid #2e7d32;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 15px auto;
+        max-width: 500px;
+        font-size: 22px;
+        color: #e66f27;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        flex: 1;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header class="stable">
+        <!--To avoid overlapping with content part-->
+        <div id="home" class="logo">
+          <img
+            style="height: 50px; width: 150px"
+            src="images/CTIS_airlines_Logo_blue.png"
+          />
+        </div>
+      </header>
+
+    <img
+      src="images/coupons_banner_photo.png"
+      alt="Kupon Banner"
+      class="banner"
+    />
+
+    <div class="container">
+      <h2>My Coupons</h2>
+      <p class="kupon-text" id="kuponMesaji"></p>
+    </div>
+    <footer>
+      <div class="leftFooter">
+        <span
+          >Made by Mert Duman, Buhari Horoz, Arda Faruk Yurtbilir, Umut Ali
+          Yalcin</span
+        >
+        <span>All rights are reserved since 2025</span>
+      </div>
+      <div class="rightFooter">
+        <div><a href="#">About us</a></div>
+        <div><a href="campaigns.html">Campaigns</a></div>
+        <div><a href="#">Privacy Policy</a></div>
+      </div>
+    </footer>
+
+    <script>
+      const kuponlarJson = localStorage.getItem("kazandiginKuponlar");
+      const mesajKutusu = document.getElementById("kuponMesaji");
+
+      if (kuponlarJson) {
+        const kuponlar = JSON.parse(kuponlarJson);
+
+        if (kuponlar.length > 0) {
+          kuponlar.forEach((puan) => {
+            mesajKutusu.innerHTML += `
+        <div class="kupon-card">
+          You earned ${puan} TL worth of coupon! 🎉
+        </div>
+      `;
+          });
+        } else {
+          mesajKutusu.innerText = `You don't have any coupon yet 😔`;
+        }
+      } else {
+        mesajKutusu.innerText = `You don't have any coupon yet 😔`;
+      }
+      $("#home").click(function () {
+        window.location.href = "mainPage.html";
+      });
+    </script>
+  </body>
+</html>

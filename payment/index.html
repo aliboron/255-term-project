@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content-area">
+        <div class="container">
+            <h1>Payment</h1>
+            <p class="step-indicator">Step 3/3: Enter your payment information</p>
+            
+            <div class="payment-form">
+                <div class="form-section">
+                    <h2>Passenger Information</h2>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" placeholder="Full Name">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="0(5XX) XXX XX XX">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tcno">ID Number</label>
+                        <input type="text" id="tcno" placeholder="ID Number">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Card Information</h2>
+                    <div class="form-group">
+                        <label for="cardname">Cardholder Name</label>
+                        <input type="text" id="cardname" placeholder="Cardholder Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="text" id="cardnumber" placeholder="XXXX XXXX XXXX XXXX">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiration Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="XXX">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="agreement">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I have read and agree to the terms of sale and privacy policy.</label>
+                </div>
+                
+                <button id="pay-button" disabled>PAY NOW</button>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <h2>Order Summary</h2>
+            <div class="trip-details">
+                <h3>Travel Information</h3>
+                <p><i class="fas fa-plane"></i> <span id="route">Ankara > Istanbul</span></p>
+                <p><i class="fas fa-calendar"></i> <span id="date">May 10, 2025</span></p>
+            </div>
+            
+            <div class="selection-details">
+                <h3>Selected Seats</h3>
+                <ul id="selected-seats-list">
+                    <!-- Selected seats will be added here -->
+                </ul>
+                <p>Seat Price: <span id="seat-price">0 TL</span></p>
+                
+                <h3>Selected Services</h3>
+                <ul id="selected-services-list">
+                    <!-- Selected services will be added here -->
+                </ul>
+                <p>Service Price: <span id="service-price">0 TL</span></p>
+                
+                <div id="discounts-section">
+                    <h3>Available Discounts</h3>
+                    <ul id="discounts-list">
+                        <!-- Discounts will be added here -->
+                    </ul>
+                    <p class="original-price">Original Price: <span id="original-price">0 TL</span></p>
+                </div>
+                
+                <p class="total">Total Price: <span id="total-price">0 TL</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Successful Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-check-circle"></i> Payment Successful</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your tickets have been successfully created. Ticket details have been sent to your email address.</p>
+                <button id="go-to-home">RETURN TO HOME PAGE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content-area">
+        <div class="container">
+            <h1>Additional Services</h1>
+            <p class="step-indicator">Step 2/3: Select services that will make your flight more comfortable</p>
+            
+            <div class="services-list">
+                <!-- Services will be added here with JQuery -->
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <h2>Selection Summary</h2>
+            <div class="selection-details">
+                <h3>Selected Seats</h3>
+                <ul id="selected-seats-list">
+                    <!-- Selected seats will be added here -->
+                </ul>
+                <p>Seat Price: <span id="seat-price">0 TL</span></p>
+                <p class="price-details"><small id="seat-price-info"></small></p>
+                
+                <h3>Selected Services</h3>
+                <ul id="selected-services-list">
+                    <li>No services selected yet.</li>
+                </ul>
+                <p>Service Price: <span id="service-price">0 TL</span></p>
+                
+                <p class="total">Total Price: <span id="total-price">0 TL</span></p>
+            </div>
+            <button id="continue-button">CONTINUE</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Biletlerim</title>
+    <link rel="stylesheet" href="css/mainPageStyle.css" />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        flex: 1;
+      }
+
+      .banner {
+        width: 100%;
+        height: 200px;
+        display: block;
+        margin: 0;
+      }
+
+      .container h2 {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .bilet-card {
+        background-color: #fff3e0;
+        border: 2px solid #ef6c00;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 15px auto;
+        max-width: 600px;
+        font-size: 18px;
+        color: #4e342e;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .bilet-card span {
+        display: block;
+        margin: 5px 0;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 50px;
+        background-color: #b3e5fc;
+      }
+
+      .topbar img {
+        height: 60px;
+      }
+
+      .topbar .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .topbar .nav-links a {
+        padding: 10px 20px;
+        background-color: white;
+        border: 2px solid #000;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="stable">
+      <!--To avoid overlapping with content part-->
+      <div id="home" class="logo">
+        <img
+          style="height: 50px; width: 150px"
+          src="images/CTIS_airlines_Logo_blue.png"
+        />
+      </div>
+    </header>
+
+    <img
+      src="images/tickets_banner_photo.jpg"
+      alt="Biletlerim Banner"
+      class="banner"
+    />
+
+    <div class="container">
+      <h2>My Tickets</h2>
+      <div id="biletlerContainer"></div>
+    </div>
+
+    <footer>
+      <div class="leftFooter">
+        <span
+          >Made by Mert Duman, Buhari Horoz, Arda Faruk Yurtbilir, Umut Ali
+          Yalcin</span
+        >
+        <span>All rights are reserved since 2025</span>
+      </div>
+      <div class="rightFooter">
+        <div><a href="#">About us</a></div>
+        <div><a href="campaigns.html">Campaigns</a></div>
+        <div><a href="#">Privacy Policy</a></div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      const biletler =
+        JSON.parse(localStorage.getItem("purchasedTickets")) || [];
+      const container = $("#biletlerContainer");
+
+      if (biletler.length > 0) {
+        biletler.forEach((bilet) => {
+          
+          container.append(`
+          <div class="bilet-card">
+            <span><strong>Name:</strong> ${bilet.fullName}</span>
+            <span><strong>Route:</strong> ${bilet.route}</span>
+            <span><strong>Date:</strong> ${bilet.date}</span>
+            <span><strong>Seats:</strong> ${bilet.seats}</span>
+            <span><strong>Fee:</strong> ${bilet.totalPrice}</span>
+            <span><strong>Date Bought:</strong> ${new Date(
+              bilet.purchaseDate
+            ).toLocaleString()}</span>
+          </div>`);
+        });
+      } else {
+        container.append(
+          `<p style="font-size: 20px;">You don't have any tickets yet 😔</p>`
+        );
+      }
+      $("#home").click(function () {
+        window.location.href = "mainPage.html";
+      });
+    </script>
+  </body>
+</html>
